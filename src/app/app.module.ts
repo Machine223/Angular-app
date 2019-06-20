@@ -4,15 +4,22 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { MyFirstComponent } from './my-first/my-first.component';
+
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    MyFirstComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    NgbModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
+

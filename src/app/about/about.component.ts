@@ -7,9 +7,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AboutComponent implements OnInit {
 
+  objetsName = 'Machine a laver';
+  objetsStatus = 'Eteint';
+
+
   constructor() { }
 
   ngOnInit() {
   }
 
+  getStatus(){
+    return this.objetsStatus;
+  }
 }

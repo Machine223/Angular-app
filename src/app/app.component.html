@@ -22,7 +22,10 @@
           <app-about></app-about>   
           <app-about></app-about>          
       </ul>
-      <button class="btn btn-sucess"[disabled]="!isAuth">Tout activer</button>
+      <button 
+      class="btn btn-sucess"
+      [disabled]="!isAuth"
+      (click)="onAlummer()">Tout activer</button>
     </div>
   </div>
 </div>

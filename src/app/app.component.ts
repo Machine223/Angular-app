@@ -14,4 +14,7 @@ export class AppComponent {
       }, 4000
     );
   }
+  onAlummer(){
+    console.log("hello world!");
+  }
 }

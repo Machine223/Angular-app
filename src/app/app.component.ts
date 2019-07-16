@@ -7,10 +7,18 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   isAuth = false;
+  
+  objetsNameOne = 'Machine a laver';
+  objetsNameTwo = 'Television';
+  objetsNameThree = "Ordinateur";
+  on = "allumé";
+  off = "éteint";
+  
   constructor() {
     setTimeout(
       () => {
         this.isAuth = true;
+        this.off = "allumé";
       }, 3000
     );
   }

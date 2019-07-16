@@ -7,18 +7,26 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   isAuth = false;
-  
-  objetsNameOne = 'Machine a laver';
-  objetsNameTwo = 'Television';
-  objetsNameThree = "Ordinateur";
-  on = "allumé";
-  off = "éteint";
+  Objets = [
+    {
+      name : 'Machine a laver',
+      status: 'allumé'
+    },
+    {
+      name : 'Television',
+      status: 'éteint'
+    },  
+    {
+      name : 'Ordinateur',
+      status: 'allumé'
+    },
+  ];
+
   
   constructor() {
     setTimeout(
       () => {
         this.isAuth = true;
-        this.off = "allumé";
       }, 3000
     );
   }

@@ -5,6 +5,7 @@
   </ngb-alert>
 </p> -->
 
+
 <ul>
   <li><a routerLink="">Home</a></li>
   <li><a routerLink="about/48">About</a></li>
@@ -17,9 +18,11 @@
       <div class="col-xs-12">
         <h2>Mes objets</h2>
         <ul class="list-group">
-          <app-about [objetsName] = "objetsNameOne" [objetsStatus]= "on"></app-about>
-          <app-about [objetsName] = "objetsNameTwo" [objetsStatus]= "off"></app-about>   
-          <app-about [objetsName] = "objetsNameThree" [objetsStatus]= "on"></app-about>          
+          <app-about *ngFor="let mesObjets of Objets"
+                      [objetsName]="Objets.name"
+                      [objetsStatus]="Objets.status"
+          ></app-about>
+                
       </ul>
       <button 
       class="btn btn-sucess"

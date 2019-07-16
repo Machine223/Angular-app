@@ -11,7 +11,7 @@ export class AppComponent {
     setTimeout(
       () => {
         this.isAuth = true;
-      }, 4000
+      }, 3000
     );
   }
   onAlummer(){

@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   isAuth = false;
-
+  lastUpdate = new Date();
   Objets = [
     {
       name : 'Machine a laver',

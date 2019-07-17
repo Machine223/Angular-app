@@ -19,4 +19,11 @@ export class AboutComponent implements OnInit {
   getStatus(){
     return this.objetsStatus;
   }
+  getColor(){
+    if(this.objetsStatus === "allumé"){
+      return 'green';
+    }else{
+      return 'red';
+    }
+  }
 }

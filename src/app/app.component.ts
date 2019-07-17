@@ -7,6 +7,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   isAuth = false;
+
   Objets = [
     {
       name : 'Machine a laver',
@@ -22,7 +23,6 @@ export class AppComponent {
     },
   ];
 
-  
   constructor() {
     setTimeout(
       () => {

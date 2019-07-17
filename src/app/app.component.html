@@ -19,10 +19,9 @@
         <h2>Mes objets</h2>
         <ul class="list-group">
           <app-about *ngFor="let mesObjets of Objets"
-                      [objetsName]="Objets.name"
-                      [objetsStatus]="Objets.status"
-          ></app-about>
-                
+                      [objetsName]="mesObjets.name"
+                      [objetsStatus]="mesObjets.status"
+          ></app-about>     
       </ul>
       <button 
       class="btn btn-sucess"

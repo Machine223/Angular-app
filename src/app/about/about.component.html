@@ -1,6 +1,6 @@
 <li [ngClass]="{'list-group-item': true,
-'list-group-item-success': objetsStatus === 'allumé',
-'list-group-item-danger': objetsStatus === 'éteint'}">
+                'list-group-item-success': objetsStatus === 'allumé',
+                'list-group-item-danger': objetsStatus === 'éteint'}">
     <div 
         style="width:20px;height:20px;background-color:red;"
         *ngIf ="objetsStatus === 'éteint'" >

@@ -10,6 +10,8 @@ import { MyFirstComponent } from './my-first/my-first.component';
 import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
 
+import{AboutService}from './services/about.services'
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,7 +25,7 @@ import { AboutComponent } from './about/about.component';
     FormsModule,
     NgbModule.forRoot()
   ],
-  providers: [],
+  providers: [AboutService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

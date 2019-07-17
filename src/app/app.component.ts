@@ -1,29 +1,28 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { promise } from 'protractor';
+import{AboutService}from './services/about.services';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
+export class AppComponent implements OnInit{
   isAuth = false;
-  lastUpdate = new Date();
-  Objets = [
-    {
-      name : 'Machine a laver',
-      status: 'allumé'
-    },
-    {
-      name : 'Television',
-      status: 'éteint'
-    },  
-    {
-      name : 'Ordinateur',
-      status: 'allumé'
-    },
-  ];
+  //myDate = new Date();
+  
+  lastUpdate = new Promise((resolve,reject) =>{
+    const date = new Date();
+    setTimeout(
+      () => {
+      resolve(date);
+    }, 2000);
+  });
 
-  constructor() {
+  Objets: any[];
+ 
+
+  constructor(private monService: AboutService ) {
     setTimeout(
       () => {
         this.isAuth = true;
@@ -32,5 +31,9 @@ export class AppComponent {
   }
   onAlummer(){
     console.log("hello world!");
+  }
+
+  ngOnInit(){
+    this.Objets = this.monService.Objets
   }
 }

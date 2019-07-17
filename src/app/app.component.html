@@ -18,7 +18,7 @@
       <div class="col-xs-12">
         <h2>Mes objets</h2>
         <p>
-          Mise à jour : {{lastUpdate|date: yyyymmmmdd}}
+          Mise à jour : {{lastUpdate| async |date: yyyymmmmdd}}
         </p>
         <ul class="list-group">
           <app-about *ngFor="let mesObjets of Objets"

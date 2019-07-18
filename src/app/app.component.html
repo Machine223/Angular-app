@@ -25,11 +25,9 @@
                       [objetsName]="mesObjets.name"
                       [objetsStatus]="mesObjets.status"
           ></app-about>     
-      </ul>
-      <button 
-      class="btn btn-sucess"
-      [disabled]="!isAuth"
-      (click)="onAlummer()">Tout activer</button>
+        </ul>
+      <button class="btn btn-success"(click)="onAlummer()">Tout activer</button>
+      <button class="btn btn-danger" (click)="onEteindre()">Tout éteindre</button>
     </div>
   </div>
 </div>

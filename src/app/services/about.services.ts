@@ -1,5 +1,5 @@
 export class AboutService {
-    
+
     Objets = [
         {
           name : 'Machine a laver',
@@ -14,4 +14,14 @@ export class AboutService {
           status: 'allumé'
         },
     ];
+    switchOnAll(){
+        for(let objet of this.Objets){
+            objet.status = 'allumé';
+        }
+    }
+    switchOffAll(){
+        for(let objet of this.Objets){
+            objet.status = 'éteint';
+        }
+    }
 }

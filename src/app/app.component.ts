@@ -30,9 +30,14 @@ export class AppComponent implements OnInit{
     );
   }
   onAlummer(){
-    console.log("hello world!");
+    console.log("Button ON");
+    this.monService.switchOnAll();
   }
 
+  onEteindre(){
+    console.log("Boutton OFF");
+    this.monService.switchOffAll();
+  }
   ngOnInit(){
     this.Objets = this.monService.Objets
   }

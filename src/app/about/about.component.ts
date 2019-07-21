@@ -29,11 +29,11 @@ export class AboutComponent implements OnInit {
     }
   }
 
-onSwitch() {
+  onSwitch(){
     if(this.objetsStatus === 'allumé') {
       this.objetService.switchOffOne(this.indexOfAbout);
     } else if(this.objetsStatus === 'éteint') {
       this.objetService.switchOnOne(this.indexOfAbout);
     }
-}
+  }
 }

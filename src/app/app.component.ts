@@ -7,6 +7,7 @@ import{AboutService}from './services/about.services';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
+
 export class AppComponent implements OnInit{
   isAuth = false;
   //myDate = new Date();

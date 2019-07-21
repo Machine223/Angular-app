@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import{AboutService}from '../services/about.services';
 
 @Component({
   selector: 'app-about',
@@ -9,9 +10,10 @@ export class AboutComponent implements OnInit {
 
   @Input() objetsName : string;
   @Input() objetsStatus : string;
+  @Input() indexOfAbout: number;
 
 
-  constructor() { }
+  constructor(private objetService: AboutService ) { }
 
   ngOnInit() {
   }
@@ -26,4 +28,12 @@ export class AboutComponent implements OnInit {
       return 'red';
     }
   }
+
+onSwitch() {
+    if(this.objetsStatus === 'allumé') {
+      this.objetService.switchOffOne(this.indexOfAbout);
+    } else if(this.objetsStatus === 'éteint') {
+      this.objetService.switchOnOne(this.indexOfAbout);
+    }
+}
 }

@@ -24,4 +24,11 @@ export class AboutService {
             objet.status = 'éteint';
         }
     }
+
+    switchOnOne(index: number){
+        this.Objets[index].status = 'allumé';
+    }
+    switchOffOne(index: number){
+        this.Objets[index].status = 'éteint';
+    }
 }

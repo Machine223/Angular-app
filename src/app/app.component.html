@@ -21,7 +21,8 @@
           Mise à jour : {{lastUpdate| async |date: yyyymmmmdd}}
         </p>
         <ul class="list-group">
-          <app-about *ngFor="let mesObjets of Objets"
+          <app-about *ngFor="let mesObjets of Objets"  let i = "index"
+                      [indexOfAbout] = "index"
                       [objetsName]="mesObjets.name"
                       [objetsStatus]="mesObjets.status"
           ></app-about>     

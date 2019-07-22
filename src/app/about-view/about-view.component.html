@@ -1,0 +1,15 @@
+<div class="col-xs-12">
+    <h2>Mes objets</h2>
+    <p>
+      Mise à jour : {{lastUpdate| async |date: yyyymmmmdd}}
+    </p>
+    <ul class="list-group">
+      <app-about *ngFor="let mesObjets of Objets;  let i = index"
+                  [indexOfAbout] = "i"
+                  [objetsName]="mesObjets.name"
+                  [objetsStatus]="mesObjets.status"
+      ></app-about>     
+    </ul>
+  <button class="btn btn-success"(click)="onAlummer()">Tout activer</button>
+  <button class="btn btn-danger" (click)="onEteindre()">Tout éteindre</button>
+</div>

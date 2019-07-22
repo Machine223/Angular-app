@@ -5,8 +5,15 @@
   </ngb-alert>
 </p> 
 -->
-
-
+<nav class="navbar navbar-default">
+  <div class="container fluid"></div>
+   <ul class="nav navbar-nav">
+     <li routerLinkActive="active"><a routerLink="auth">Authentification</a></li>
+     <li routerLinkActive="active"><a routerLink="objets">Objets</a></li>
+     <li><a href="#">Contact</a></li>
+     <li><a href="#">Désactivation</a></li>     
+   </ul>
+</nav>
 <div class="container">
     <div class="row">
       <router-outlet></router-outlet>

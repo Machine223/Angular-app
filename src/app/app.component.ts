@@ -9,5 +9,6 @@ import{AboutService}from './services/about.services';
 })
 
 export class AppComponent {
+ constructor(){}
  
 }

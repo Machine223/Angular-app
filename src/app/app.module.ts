@@ -9,6 +9,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AboutComponent } from './about/about.component';
 
 import{ AboutService}from './services/about.services';
+import{ AuthService}from './services/auth.services';
 import { AuthComponent } from './auth/auth.component';
 import { AboutViewComponent } from './about-view/about-view.component'
 import { RouterModule, Routes } from '@angular/router';
@@ -33,7 +34,7 @@ const appRoutes: Routes = [
     NgbModule.forRoot(),
     RouterModule.forRoot(appRoutes),
   ],
-  providers: [AboutService],
+  providers: [AboutService,AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

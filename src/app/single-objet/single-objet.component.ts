@@ -3,6 +3,7 @@ import{ AboutService }from '../services/about.services';
 import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/observable/interval';
+import { Subscription } from 'rxjs';
  
 @Component({
   selector: 'app-single-objet',
@@ -14,6 +15,7 @@ export class SingleObjetComponent implements OnInit {
   name: string = 'Objet';
   status: string = 'Status';
   secondes: number;
+  counterSubscription: Subscription; // pour eviter les comportement infini
   
   constructor(private ObjetService : AboutService, 
               private route: ActivatedRoute) { }
@@ -26,7 +28,7 @@ export class SingleObjetComponent implements OnInit {
     // code pour lobservable qui compte le temps quon reste sur cette page 
     // subscribe peut prendre jusqua 3 arguments
     const counter = Observable.interval(1000);
-    counter.subscribe(
+    this.counterSubscription = counter.subscribe(
       (value) => {
         this.secondes = value;
         console.log("L'observable commence à compter!");
@@ -38,6 +40,10 @@ export class SingleObjetComponent implements OnInit {
         console.log('Observable complete!');
       }
     );
+  }
+
+  ngOnDestroy() { //détruit la souscription et empêche les comportements inattendus liés aux Observables infinis
+    this.counterSubscription.unsubscribe();
   }
 
 }

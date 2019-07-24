@@ -3,7 +3,7 @@
                 'list-group-item-danger': objetsStatus === 'éteint'}">
     
     <h4 [ngStyle]="{color:getColor()}" >Objets : {{ objetsName }} -- Status : {{getStatus()}}</h4>
-    
+    <a  [routerLink]="[id]">Détail</a>
     <button class="btn btn-sm btn-success"
             *ngIf="objetsStatus === 'éteint'"
             (click)="onSwitch()">Allumer</button>

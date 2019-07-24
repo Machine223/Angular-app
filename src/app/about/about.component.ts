@@ -11,6 +11,7 @@ export class AboutComponent implements OnInit {
   @Input() objetsName : string;
   @Input() objetsStatus : string;
   @Input() indexOfAbout: number;
+  @Input() id : number;
 
 
   constructor(private objetService: AboutService ) { }

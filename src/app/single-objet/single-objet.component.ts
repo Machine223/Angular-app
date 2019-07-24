@@ -16,7 +16,9 @@ export class SingleObjetComponent implements OnInit {
               private route: ActivatedRoute) { }
 
   ngOnInit() {
-    this.name = this.route.snapshot.params['id'];
+    const id = this.route.snapshot.params['id']; // va chercher le id mais le garde en string
+    this.name = this.ObjetService.getObjetById(+id).name; // en ajoutant + on cast le string en nombre et on peux chercher le name
+    this.status = this.ObjetService.getObjetById(+id).status;
   }
 
 }

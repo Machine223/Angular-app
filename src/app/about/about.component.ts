@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import{AboutService}from '../services/about.services';
+import { AlertsService } from 'angular-alert-module';
 
 @Component({
   selector: 'app-about',
@@ -14,9 +15,11 @@ export class AboutComponent implements OnInit {
   @Input() id : number;
 
 
-  constructor(private objetService: AboutService ) { }
+  constructor(private objetService: AboutService,
+              private alerts: AlertsService ) { }
 
   ngOnInit() {
+    
   }
 
   getStatus(){

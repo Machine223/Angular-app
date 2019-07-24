@@ -14,12 +14,19 @@ import { AuthComponent } from './auth/auth.component';
 import { AboutViewComponent } from './about-view/about-view.component'
 import { RouterModule, Routes } from '@angular/router';
 import { SingleObjetComponent } from './single-objet/single-objet.component';
+import { FourOhFourComponent } from './four-oh-four/four-oh-four.component';
+
+// Import your library
+import { AlertsModule } from 'angular-alert-module';
+import { AuthGuard } from './services/auth-guard.service';
 
 const appRoutes: Routes = [
-  { path: "objets",  component: AboutViewComponent },
-  { path: "objets/:id", component: SingleObjetComponent}, 
+  { path: "objets", canActivate:[AuthGuard],  component: AboutViewComponent },
+  { path: "objets/:id",canActivate:[AuthGuard], component: SingleObjetComponent}, 
   { path: "auth",  component: AuthComponent },
-  { path: '',  component: AboutViewComponent}
+  { path: '', canActivate:[AuthGuard], component: AboutViewComponent},
+  { path: 'not-found', component: FourOhFourComponent},
+  { path: '**', redirectTo:'/not-found'}
 ];
 
 @NgModule({
@@ -28,7 +35,8 @@ const appRoutes: Routes = [
     AboutComponent,
     AuthComponent,
     AboutViewComponent,
-    SingleObjetComponent
+    SingleObjetComponent,
+    FourOhFourComponent
   ],
   imports: [
     BrowserModule,
@@ -36,8 +44,9 @@ const appRoutes: Routes = [
     FormsModule,
     NgbModule.forRoot(),
     RouterModule.forRoot(appRoutes),
+    AlertsModule.forRoot()
   ],
-  providers: [AboutService,AuthService],
+  providers: [AboutService,AuthService,AuthGuard ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

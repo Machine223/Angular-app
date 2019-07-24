@@ -13,9 +13,11 @@ import{ AuthService}from './services/auth.services';
 import { AuthComponent } from './auth/auth.component';
 import { AboutViewComponent } from './about-view/about-view.component'
 import { RouterModule, Routes } from '@angular/router';
+import { SingleObjetComponent } from './single-objet/single-objet.component';
 
 const appRoutes: Routes = [
   { path: "objets",  component: AboutViewComponent },
+  { path: "objets/:id", component: SingleObjetComponent}, 
   { path: "auth",  component: AuthComponent },
   { path: '',  component: AboutViewComponent}
 ];
@@ -25,7 +27,8 @@ const appRoutes: Routes = [
     AppComponent,
     AboutComponent,
     AuthComponent,
-    AboutViewComponent
+    AboutViewComponent,
+    SingleObjetComponent
   ],
   imports: [
     BrowserModule,

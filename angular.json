@@ -51,7 +51,7 @@
               "node_modules/bootstrap/dist/css/bootstrap.min.css"
             ],
             "scripts": [
-              "assets/js/four.service.js"
+            
             ]
           },
           "configurations": {

@@ -24,6 +24,7 @@ import { EditObjetComponent } from './edit-objet/edit-objet.component';
 const appRoutes: Routes = [
   { path: "objets", canActivate:[AuthGuard],  component: AboutViewComponent },
   { path: "objets/:id",canActivate:[AuthGuard], component: SingleObjetComponent}, 
+  { path: "edit", canActivate:[AuthGuard], component: EditObjetComponent},
   { path: "auth",  component: AuthComponent },
   { path: '', canActivate:[AuthGuard], component: AboutViewComponent},
   { path: 'not-found', component: FourOhFourComponent},

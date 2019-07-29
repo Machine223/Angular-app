@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {NgForm} from '@angular/forms';
 
 @Component({
   selector: 'app-edit-objet',
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EditObjetComponent implements OnInit {
 
+  defaultOnOff :string = 'Éteint';
+
   constructor() { }
 
   ngOnInit() {
+  }
+
+  onSubmit(form: NgForm){
+    console.log(form.value);
   }
 
 }

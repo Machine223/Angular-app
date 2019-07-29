@@ -29,10 +29,10 @@ export class SingleObjetComponent implements OnInit {
     // subscribe peut prendre jusqua 3 arguments
     const counter = Observable.interval(1000);
     this.counterSubscription = counter.subscribe(
-      (value) => {
+      (value) => { // 1er argument
         this.secondes = value;
         console.log("L'observable commence à compter!");
-      },
+      }, 
       (error) => {
         console.log('Uh-oh, an error occurred! : ' + error);
       },

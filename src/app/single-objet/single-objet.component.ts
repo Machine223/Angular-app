@@ -27,7 +27,7 @@ export class SingleObjetComponent implements OnInit {
     
     // code pour lobservable qui compte le temps quon reste sur cette page 
     // subscribe peut prendre jusqua 3 arguments
-    const counter = Observable.interval(1000);
+    const counter = Observable.interval(1000); //Il émettra des chiffres croissants toutes les secondes.
     this.counterSubscription = counter.subscribe(
       (value) => { // 1er argument
         this.secondes = value;

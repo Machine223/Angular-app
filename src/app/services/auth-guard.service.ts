@@ -3,7 +3,10 @@ import { Observable } from 'rxjs/Observable';
 import { AuthService } from '../services/auth.services';
 import { Injectable } from '@angular/core';
 
-@Injectable()
+@Injectable() // À faire en sorte que l'on puisse y injecter un autre service
+// @Component, @Pipe, et @Directive sont des sous classes de @Injectable(). Peut-etre mis par defaut 
+// pour eviter des [problemes] dans un projet
+
 export class AuthGuard implements CanActivate {
 
   constructor(private authService: AuthService,

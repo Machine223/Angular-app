@@ -21,8 +21,8 @@ export class AuthComponent implements OnInit {
     this.authService.signIn().then( //then est execute quand cest terminer seulement
       () => {
         console.log("Connexion réussi!");
-        this.authStatus = this.authService.isAuth; // mettre a jour authStatus
-        this.router.navigate(['objets']);
+        this.authStatus = this.authService.isAuth; // mettre a jour authStatus tranfert donnee
+        this.router.navigate(['objets']); //** syntaxe important **
       }
     );
   }

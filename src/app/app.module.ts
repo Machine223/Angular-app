@@ -19,6 +19,7 @@ import { FourOhFourComponent } from './four-oh-four/four-oh-four.component';
 // Import your library
 import { AlertsModule } from 'angular-alert-module';
 import { AuthGuard } from './services/auth-guard.service';
+import { EditObjetComponent } from './edit-objet/edit-objet.component';
 
 const appRoutes: Routes = [
   { path: "objets", canActivate:[AuthGuard],  component: AboutViewComponent },
@@ -36,7 +37,8 @@ const appRoutes: Routes = [
     AuthComponent,
     AboutViewComponent,
     SingleObjetComponent,
-    FourOhFourComponent
+    FourOhFourComponent,
+    EditObjetComponent
   ],
   imports: [
     BrowserModule,

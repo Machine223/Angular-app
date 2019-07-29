@@ -54,4 +54,18 @@ export class AboutService {
         this.Objets[index].status = 'éteint';
         this.emitObjetSubject();
     }
+
+    addObjet(name:string , status:string){ // methode pour recuperer les donner du formulaire
+        const appareilObject = {
+            id: 0,
+            name: '',
+            status: ''
+          };
+          appareilObject.name = name; // celui recu en argument
+          appareilObject.status = status; // celui recu en argument 
+          appareilObject.id = this.Objets[(this.Objets.length - 1)].id + 1; // on genere un nouvel id , 
+          // apartir du dernier id de la liste et on fait +1 , length=longeur du tableau
+          this.Objets.push(appareilObject); // on ajoute ce nouveau id a la liste avec push
+          this.emitObjetSubject(); // Emettre pour avoir acces au tableau private!
+    }
 }

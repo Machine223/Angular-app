@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import{AboutService}from '../services/about.services';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-about-view',
@@ -20,6 +21,7 @@ export class AboutViewComponent implements OnInit {
   });
 
   Objets: any[];
+  objetSubsription: Subscription;
  
 
   constructor(private monService: AboutService ) {
@@ -39,7 +41,12 @@ export class AboutViewComponent implements OnInit {
     this.monService.switchOffAll();
   }
   ngOnInit(){
-    this.Objets = this.monService.Objets
+    this.objetSubsription = this.monService.objetSubject.subscribe(
+      (objets: any[] ) => {
+        this.Objets = objets;
+      }
+    );
+    this.monService.emitObjetSubject();
   }
 
 }

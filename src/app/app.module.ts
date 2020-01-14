@@ -20,6 +20,7 @@ import { FourOhFourComponent } from './four-oh-four/four-oh-four.component';
 import { AlertsModule } from 'angular-alert-module';
 import { AuthGuard } from './services/auth-guard.service';
 import { EditObjetComponent } from './edit-objet/edit-objet.component';
+import { GameBoardComponent } from './game-board/game-board.component';
 
 const appRoutes: Routes = [
   { path: "objets", canActivate:[AuthGuard],  component: AboutViewComponent },
@@ -39,7 +40,8 @@ const appRoutes: Routes = [
     AboutViewComponent,
     SingleObjetComponent,
     FourOhFourComponent,
-    EditObjetComponent
+    EditObjetComponent,
+    GameBoardComponent
   ],
   imports: [
     BrowserModule,
